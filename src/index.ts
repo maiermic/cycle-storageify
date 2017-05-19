@@ -51,21 +51,16 @@ export default function storageify<Sources extends OnionSource, Sinks extends On
     // change initial reducer (first reducer) of component
     // to merge default state with stored state
     const childReducer$ = componentSinks.onion;
-    const initialReducer$ =
-      xs.combine(
-          storedData$,
-          childReducer$.take(1)
-        )
-        .map(([storedState, initialReducerChild]: [any, Reducer]) =>
-            prevState =>
-              ({...initialReducerChild(prevState), storedState})
-          );
-    // replace initial reducer
-    const parentReducer$ =
-      xs.merge(
-          initialReducer$,
-          childReducer$.drop(1)
-        );
+
+    const parentReducer$ = storedData$.map(storedData =>
+      childReducer$.startWith(function initialStorageReducer(prevState: any) {
+        if (prevState) {
+          return {...prevState, ...storedData};
+        } else {
+          return storedData;
+        }
+      })
+    ).flatten();
 
     const storage$ = state$.map(_options.serialize)
         .map(value => ({key: _options.key, value}));
