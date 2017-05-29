@@ -23,8 +23,8 @@ function serialize(state: any) {
   return JSON.stringify(state);
 }
 
-function deserialize(str: string) {
-  return JSON.parse(str) || {};
+function deserialize(str: string | null) {
+  return str === null ? void 0 : JSON.parse(str);
 }
 
 export default function storageify<Sources extends OnionSource, Sinks extends OnionSink>(
@@ -54,8 +54,10 @@ export default function storageify<Sources extends OnionSource, Sinks extends On
 
     const parentReducer$ = storedData$.map(storedData =>
       childReducer$.startWith(function initialStorageReducer(prevState: any) {
-        if (prevState) {
+        if (prevState && storedData) {
           return {...prevState, ...storedData};
+        } else if (prevState) {
+          return prevState;
         } else {
           return storedData;
         }
