@@ -1,6 +1,6 @@
 {
   "name": "cycle-storageify",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Augments your Cycle.js component (main function) by storing its onion-shaped state in local storage",
   "author": "Michael Maier",
   "license": "MIT",
