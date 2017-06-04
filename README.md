@@ -20,4 +20,4 @@ Cycle.run(wrappedMain, {
 
 ## Advanced example
 
-See `storageify` branch of [TodoMVC]().
+See `onionify` branch of [TodoMVC in Cycle.js](https://github.com/cyclejs/todomvc-cycle/tree/onionify).
