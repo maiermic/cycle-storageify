@@ -29,11 +29,11 @@ function deserialize(str: string | null) {
 
 export default function storageify<Sources extends OnionSource, Sinks extends OnionSink>(
       Component: Component<Sources, Sinks>,
-      options: {
+      options?: Partial<{
           key: string,
           serialize(state: any): string,
           deserialize(stateStr: string): any,
-        }
+        }>
     ): Component<Sources & StorageSource, Sinks & StorageSink> {
   const _options = {
     // defaults
