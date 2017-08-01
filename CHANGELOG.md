@@ -1,3 +1,16 @@
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/maiermic/cycle-storageify/compare/v3.0.0...v3.1.0) (2017-08-01)
+
+### Bug Fixes
+
+* **storageify:** Other local storage stuff is not overwritten anymore in the `storage` sink.
+
+### Features
+
+* **storageify:** Make `options` optional.
+
+
+
 <a name="3.0.0"></a>
 # [3.0.0](https://github.com/maiermic/cycle-storageify/compare/v2.0.0...v3.0.0) (2017-05-30)
 
