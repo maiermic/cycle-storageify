@@ -69,7 +69,7 @@ export default function storageify<Sources extends OnionSource, Sinks extends On
     const sinks = {
       ...(componentSinks as any),
       onion: parentReducer$,
-      storage: storage$,
+      storage: xs.merge(storage$, componentSinks.storage || xs.never())
     };
     return sinks;
   };
