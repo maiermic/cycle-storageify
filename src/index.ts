@@ -1,4 +1,5 @@
 import xs, {Stream} from 'xstream';
+import debounce from 'xstream/extra/debounce';
 
 export type Component<Sources, Sinks> = (sources: Sources) => Sinks;
 export type Reducer = (state: any) => any;
@@ -33,6 +34,7 @@ export default function storageify<Sources extends OnionSource, Sinks extends On
           key: string,
           serialize(state: any): string,
           deserialize(stateStr: string): any,
+          debounce: number,
         }>
     ): Component<Sources & StorageSource, Sinks & StorageSink> {
   const _options = {
@@ -45,7 +47,8 @@ export default function storageify<Sources extends OnionSource, Sinks extends On
   return function (sources: Sources & StorageSource): Sinks & StorageSink {
     const localStorage$ = sources.storage.local.getItem(_options.key).take(1);
     const storedData$ = localStorage$.map(_options.deserialize);
-    const state$ = sources.onion.state$;
+    const state$ = sources.onion.state$
+        .compose(_options.debounce ? debounce(_options.debounce) : x => x);
     const componentSinks = Component(sources);
 
     // change initial reducer (first reducer) of component
