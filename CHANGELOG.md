@@ -1,3 +1,12 @@
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/maiermic/cycle-storageify/compare/v3.1.0...v3.2.0) (2017-08-04)
+
+### Features
+
+* **storageify:** Add `debounce` option.
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/maiermic/cycle-storageify/compare/v3.0.0...v3.1.0) (2017-08-01)
 
