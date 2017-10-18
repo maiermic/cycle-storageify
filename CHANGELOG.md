@@ -1,3 +1,12 @@
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/maiermic/cycle-storageify/compare/v3.2.0...v4.0.0) (2017-10-18)
+
+
+### BREAKING CHANGES
+
+* `xstream` is not a dependency anymore, but a peer dependency.
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/maiermic/cycle-storageify/compare/v3.1.0...v3.2.0) (2017-08-04)
 
