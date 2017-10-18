@@ -12,7 +12,7 @@
     "lib": "tsc",
     "prepublish": "npm run lib"
   },
-  "dependencies": {
+  "peerDependencies": {
     "xstream": "10.x"
   },
   "devDependencies": {
