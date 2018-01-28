@@ -42,6 +42,7 @@ export default function storageify<Sources extends OnionSource, Sinks extends On
     key: 'storageify',
     serialize,
     deserialize,
+    debounce: undefined,
     ...options,
   };
   return function (sources: Sources & StorageSource): Sinks & StorageSink {
