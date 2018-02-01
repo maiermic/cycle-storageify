@@ -1,6 +1,8 @@
 <a name="4.0.1"></a>
 # [4.0.1](https://github.com/maiermic/cycle-storageify/compare/v4.0.0...v4.0.1) (2018-01-28)
 
+### Features
+
 * Add ES6 module build to enable tree shaking and scope hoisting (see [commit](https://github.com/maiermic/cycle-storageify/commit/ce085ac5706fd6d52eda059d73727b9396770c55))
 
 <a name="4.0.0"></a>
