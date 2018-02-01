@@ -16,9 +16,10 @@
     "prepublish": "npm run lib"
   },
   "peerDependencies": {
-    "xstream": "10.x"
+    "xstream": "10.x || 11.x"
   },
   "devDependencies": {
-    "typescript": "^2.3.2"
+    "typescript": "^2.3.2",
+    "xstream": "^11.1.0"
   }
 }
